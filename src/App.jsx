@@ -159,7 +159,7 @@ export default function App() {
         <div className="col-span-3">
           {/* Box metriche */}
           <div className="grid grid-cols-3 gap-4 mb-4">
-            <div className="bg-yellow-100 rounded-2xl p-4 shadow">
+            <><div className="bg-yellow-100 rounded-2xl p-4 shadow">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">👥</span>
                 <div>
@@ -168,84 +168,79 @@ export default function App() {
                 </div>
               </div>
               <p className="text-xs text-gray-600 mt-2">+20 lead</p>
-            </div>
-            <div className="bg-yellow-100 rounded-2xl p-4 shadow">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">👁️</span>
-                <div>
-                  <h3 className="font-bold text-lg">10 mila</h3>
-                  <p className="text-sm">Visualizzazioni</p>
+            </div><div className="bg-yellow-100 rounded-2xl p-4 shadow">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">👁️</span>
+                  <div>
+                    <h3 className="font-bold text-lg">10 mila</h3>
+                    <p className="text-sm">Visualizzazioni</p>
+                  </div>
                 </div>
-              </div>
-              <p className="text-xs text-gray-600 mt-2">+1000 views</p>
-            </div>
-            <div className="bg-yellow-100 rounded-2xl p-4 shadow">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">❤️</span>
-                <div>
-                  <h3 className="font-bold text-lg">200</h3>
-                  <p className="text-sm">Apprezzamenti</p>
+                <p className="text-xs text-gray-600 mt-2">+1000 views</p>
+              </div><div className="bg-yellow-100 rounded-2xl p-4 shadow">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">❤️</span>
+                  <div>
+                    <h3 className="font-bold text-lg">200</h3>
+                    <p className="text-sm">Apprezzamenti</p>
+                  </div>
                 </div>
-              </div>
-              <p className="text-xs text-gray-600 mt-2">+20 like</p>
-            </div>
+                <p className="text-xs text-gray-600 mt-2">+20 like</p>
+              </div></>
           </div>
 
           {/* Contenitore grafici */}
           <div className="bg-white rounded-2xl p-6 shadow grid grid-cols-3 gap-4">
-            <div>
+            <><div>
               <h3 className="font-bold mb-2">Media età</h3>
               <ResponsiveContainer width="100%" height={180}>
-                <BarChart data={ageData}><XAxis dataKey="group" /><Tooltip /><Bar dataKey="value" fill="#FFB400" radius={[4,4,0,0]} /></BarChart>
+                <BarChart data={ageData}><XAxis dataKey="group" /><Tooltip /><Bar dataKey="value" fill="#FFB400" radius={[4, 4, 0, 0]} /></BarChart>
               </ResponsiveContainer>
-            </div>
-            <div>
-              <h3 className="font-bold mb-2">Prime visita VS check</h3>
-              <ResponsiveContainer width="100%" height={180}>
-                <AreaChart data={visitsData}>
-                  <defs>
-                    <linearGradient id="colorPrime" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#3FA9F5" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#3FA9F5" stopOpacity={0} />
-                    </linearGradient>
-                    <linearGradient id="colorCheck" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#FF9F1C" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#FF9F1C" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <XAxis dataKey="day" />
-                  <Tooltip />
-                  <Area type="monotone" dataKey="prime" stroke="#3FA9F5" fill="url(#colorPrime)" />
-                  <Area type="monotone" dataKey="check" stroke="#FF9F1C" fill="url(#colorCheck)" />
-                  <Legend />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-            <div>
-              <h3 className="font-bold mb-2">Giugno 2025</h3>
-              <ResponsiveContainer width="100%" height={180}>
-                <PieChart>
-                  <Tooltip />
-                  <Pie data={pieData} innerRadius={50} outerRadius={70} fill="#8884d8" dataKey="value" label>
-                    {pieData.map((_, i) => (
-                      <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
-              <p className="text-sm mt-2 text-center">400 contatti hanno scelto un approccio empatico</p>
-            </div>
-            <div className="col-span-3 mt-4">
-              <h3 className="font-bold mb-2">Adesione piani alimentari</h3>
-              <p className="text-sm text-red-600 mb-2">Molti utenti preferiscono sgarrare il sabato</p>
-              <ResponsiveContainer width="100%" height={200}>
-                <BarChart data={adherenceData}>
-                  <XAxis dataKey="day" />
-                  <Tooltip />
-                  <Bar dataKey="value" fill="#FFCE00" radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
+            </div><div>
+                <h3 className="font-bold mb-2">Prime visita VS check</h3>
+                <ResponsiveContainer width="100%" height={180}>
+                  <AreaChart data={visitsData}>
+                    <defs>
+                      <linearGradient id="colorPrime" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#3FA9F5" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#3FA9F5" stopOpacity={0} />
+                      </linearGradient>
+                      <linearGradient id="colorCheck" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#FF9F1C" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#FF9F1C" stopOpacity={0} />
+                      </linearGradient>
+                    </defs>
+                    <XAxis dataKey="day" />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="prime" stroke="#3FA9F5" fill="url(#colorPrime)" />
+                    <Area type="monotone" dataKey="check" stroke="#FF9F1C" fill="url(#colorCheck)" />
+                    <Legend />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div><div>
+                <h3 className="font-bold mb-2">Giugno 2025</h3>
+                <ResponsiveContainer width="100%" height={180}>
+                  <PieChart>
+                    <Tooltip />
+                    <Pie data={pieData} innerRadius={50} outerRadius={70} fill="#8884d8" dataKey="value" label>
+                      {pieData.map((_, i) => (
+                        <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+                <p className="text-sm mt-2 text-center">400 contatti hanno scelto un approccio empatico</p>
+              </div><div className="col-span-3 mt-4">
+                <h3 className="font-bold mb-2">Adesione piani alimentari</h3>
+                <p className="text-sm text-red-600 mb-2">Molti utenti preferiscono sgarrare il sabato</p>
+                <ResponsiveContainer width="100%" height={200}>
+                  <BarChart data={adherenceData}>
+                    <XAxis dataKey="day" />
+                    <Tooltip />
+                    <Bar dataKey="value" fill="#FFCE00" radius={[4, 4, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div></>
           </div>
         </div>
       </div>

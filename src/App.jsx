@@ -71,7 +71,7 @@ export default function App() {
   const COLORS = ['#FFCE00', '#FF9F1C', '#3FA9F5'];
 
   return (
-    <div className="min-h-screen bg-[#fffceb] font-sans text-[#333] p-4">
+    <><div className="min-h-screen bg-[#fffceb] font-sans text-[#333] p-4">
       <nav className="flex justify-between items-center mb-6 px-6">
         <div className="flex items-center">
           <img src="/logo.png" alt="Ainana logo" className="h-8 w-auto" />
@@ -82,21 +82,19 @@ export default function App() {
               <button
                 key={tab.key}
                 onClick={() => setActiveSection(tab.key)}
-                className={\`relative z-10 px-4 py-2 font-medium rounded-full transition-all \${activeSection === tab.key ? "text-black" : "text-gray-600"}\`}
-              >
-                {tab.label}
-                {activeSection === tab.key && (
-                  <motion.div
-                    layoutId="underline"
-                    className="absolute inset-0 bg-yellow-400 rounded-full z-[-1]"
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
+                className={`relative z-10 px-4 py-2 font-medium rounded-full transition-all \${activeSection === tab.key ? "text-black" : "text-gray-600"}`}
+            >/>))}
+            {tab.label}
+            {activeSection === tab.key && (
+              <motion.div
+                layoutId="underline"
+                className="absolute inset-0 bg-yellow-400 rounded-full z-[-1]"
+                transition={{ type: "spring", stiffness: 500, damping: 30 }} />
+            )}
+          </button>
+          ))}
         </div>
-        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">🔔</div>
+      </></div><div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">🔔</div></>
       </nav>
 
       <div className="grid grid-cols-4 gap-4">
